@@ -7,3 +7,31 @@ nav, a{
     font-size: 2rem;
     font-weight: bold;
 }
+
+.hero-section, img{
+    height: 50vh;
+    object-fit: cover;
+}
+
+.hero-section, h5 {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: .3rem;
+    display: inline;
+}
+
+.product, .card-img-top {
+    height: 30vh;
+}
+
+.product {
+    margin-bottom: 40rem;
+
+}
+
+.footer {
+    height: 200px;
+    background-color: grey;
+    margin-top: 30px;
+}
