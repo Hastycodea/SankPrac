@@ -1,0 +1,9 @@
+
+nav, a{
+    font-size: 1.2rem;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+}
