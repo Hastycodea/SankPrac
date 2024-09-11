@@ -13,9 +13,14 @@ nav, a{
     object-fit: cover;
 }
 
-.hero-section, h5 {
+.card-title {
     color: black;
     background-color: white;
+}
+
+.hero-section, h5 {
+    color: white;
+    background-color: #FF9900;
     border-radius: 5px;
     padding: .3rem;
     display: inline;
@@ -40,13 +45,52 @@ nav, a{
 .icon  {
     color: white;
     font-size: 1.2rem;
-    white-space: 2rem;
 }
 
 .icon:hover {
-    color: #0D6EFD;
+    color: #FF9900;
 }
 
 .footer p, .footer label {
     font-size: 1rem;
+}
+
+.newsletter button {
+    border-color: white;
+    color: white;
+}
+
+.newsletter button:hover{
+    color: white;
+    background-color: #d17d00;
+}
+
+.highlight {
+    color: #FF9900;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.search-button {
+    color: white;
+    background-color: #FF9900;
+    border-radius: 10px;
+    border-color: #FF9900;
+    outline: none;
+    box-shadow: none;
+}
+
+.search-button:hover {
+    background-color: #d17d00;
+}
+
+.best-products .btn {
+    background-color: #FF9900;
+    outline: none;
+    border-color: #FF9900;
+}
+
+.best-products .btn:hover {
+    background-color: #d17d00;
+    border-color: #d17d00;
 }
