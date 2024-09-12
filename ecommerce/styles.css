@@ -1,3 +1,6 @@
+body {
+    padding-top: 80px;
+}
 
 nav, a{
     font-size: 1.2rem;
@@ -13,12 +16,26 @@ nav, a{
     object-fit: cover;
 }
 
+.navbar .sign-btn, .navbar .live-btn{
+    background-color: #FF9900;
+    border-color: #FF9900;
+    color: white;
+}
+
+.navbar .sign-btn:hover, .navbar .live-btn:hover{
+    background-color: #d17d00;
+    border-color: #d17d00;
+    color: white;
+}
+
+
+
 .card-title {
     color: black;
     background-color: white;
 }
 
-.hero-section, h5 {
+.hero-section h5 {
     color: white;
     background-color: #FF9900;
     border-radius: 5px;
@@ -69,6 +86,7 @@ nav, a{
     color: #FF9900;
     border-radius: 10px;
     font-weight: bold;
+    margin: 0;
 }
 
 .search-button {
@@ -84,13 +102,35 @@ nav, a{
     background-color: #d17d00;
 }
 
-.best-products .btn {
+.best-products .btn, .products .btn {
     background-color: #FF9900;
     outline: none;
     border-color: #FF9900;
+    color: white;
 }
 
-.best-products .btn:hover {
+.best-products .btn:hover, .products .btn:hover {
     background-color: #d17d00;
     border-color: #d17d00;
+}
+
+.product h2, .best-products h2 {
+    background-color: #4B158D;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.products-title {
+    background-color: #FF9900;
+    border-radius: 10px;
+}
+
+.products a {
+    text-decoration: none;
+    color: black;
+}
+
+.products a:hover {
+    color: #FF9900;
 }
