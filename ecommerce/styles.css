@@ -1,6 +1,9 @@
 body {
     padding-top: 80px;
+    background-color: #FF9900;
 }
+
+
 
 nav, a{
     font-size: 1.2rem;
@@ -133,4 +136,46 @@ nav, a{
 
 .products a:hover {
     color: #FF9900;
+}
+
+.detail img {
+    width: 300px;
+}
+
+.detail .delivery-details, .detail .delivery-details a {
+    font-size: .8rem;
+}
+
+.detail .delivery-details a {
+    text-decoration: none;
+}
+
+.detail .delivery-details .icon {
+    font-size: 1.6rem;
+    color: grey;
+
+}
+
+.detail .promotions a {
+    text-decoration: none;
+    font-size: small;
+}
+
+.detail a {
+    text-decoration: none;
+    font-size: small;
+}
+
+.misinformation {
+    margin-top: 4rem;
+}
+
+.detail .cart-btn {
+    background-color: #FF9900;
+    color: white;
+    font-size: medium;
+}
+
+.detail .detail-description {
+    color: #313133;
 }
