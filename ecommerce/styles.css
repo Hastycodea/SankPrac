@@ -115,6 +115,7 @@ nav, a{
 .best-products .btn:hover, .products .btn:hover {
     background-color: #d17d00;
     border-color: #d17d00;
+    color: white;
 }
 
 .product h2, .best-products h2 {
