@@ -36,6 +36,47 @@ container.addEventListener("mouseenter", mouseEnterContainer);
 
 function mouseEnterContainer() {
     console.log("Mouse Enter Clicked");
+
+    container.removeEventListener("mouseenter", mouseEnterContainer);
 }
+
+// document.addEventListener("keyup", function(event) {
+//     console.log(event.keyCode);
+// });
+
+//Defining variables
+var btt = document.getElementById("back-to-top"),
+    body = document.body,
+    docElem = document.documentElement,
+    offset = 100,
+    scrollPos, docHeight,
+    isChrome = navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
+
+//calculating document's heigth
+docHeight = Math.max(body.scrollHeight, body.offsetHeight, docElem.scrollHeight, docElem.offsetHeight, docElem.clientHeight);
+if(docHeight != 'undefined') {
+    offset = docHeight / 4;
+}
+
+//add scroll event listener
+window.addEventListener("scroll", function(event) {
+    scrollPos = body.scrollTop || docElem.scrollTop;
+    btt.className = (scrollPos > offset) ? "visible" : "";
+});
+
+//add click event listener
+btt.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    if(isChrome) {
+        docElem.scrollTop = 0;
+    } else {
+        body.scrollTop = 0;
+    }
+
+});
+
+
+
 
 
