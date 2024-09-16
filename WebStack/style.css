@@ -24,3 +24,30 @@
 #back-to-top.visible {
     opacity: 1;
 }
+
+.items li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.country input {
+    border-color: black;
+    margin-left: .3rem;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding-left: 1rem;
+}
+
+#autocomplete-results {
+    opacity: 0;
+    color: #8B8D90;
+    background: #FFFFFF;
+    border: 1px solid #E2E8EE;
+    font-size: 20px;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+#autocomplete-results.visible {
+    opacity: 1;
+}

@@ -18,7 +18,7 @@ var firstItem = document.getElementById("img1"),
     items = document.getElementsByClassName("items");
 
 
-items[1].style.display="none";
+// items[1].style.display="none";   // arrays of items
 
 for(var i = 0; i < paragraphs.length; i++) {
     paragraphs[i].style.color="grey";
@@ -75,6 +75,73 @@ btt.addEventListener("click", function(event) {
     }
 
 });
+
+var targetInput = document.getElementById("country"),
+    results = document.getElementById("autocomplete-results"),
+    matches = [],
+    countryList = [
+        "Kenya", "Brazil", "Canada", "India", "Japan", 
+        "Germany", "Australia", "France", "Italy", "China", 
+        "South Africa", "Mexico", "United States", "Nigeria", "Egypt", 
+        "Argentina", "Russia", "Spain", "Sweden", "South Korea"
+      ];
+
+targetInput.focus();
+
+targetInput.addEventListener("keyup", function(event) {
+    /* 
+    Key Codes
+    Enter: 13
+    Arrow up: 38
+    Arrow down: 40
+    */    
+
+    results.innerHTML = '';
+    toggleResults("hide");
+
+    if(this.value.length > 0) {
+        matches = getMatches (this.value);
+
+        if(matches.length > 0) {
+            displayMatches(matches);
+        }
+    }
+
+});
+
+function toggleResults(action) {
+    if(action == "show") {
+        results.classList.add("visible");
+    } else if (action == "hide") {
+        results.classList.remove("visible");
+    }
+}
+
+function getMatches(inputText) {
+    var matchList = [];
+
+    for(var i = 0; i < countryList.length; i++) {
+        if(countryList[i].toLowerCase().indexOf(inputText.toLowerCase) != -1) {
+            matchList.push(countryList[i]);
+        }
+    }
+
+    return matchList;
+}
+
+function displayMatches(matchList) {
+    var j = 0;
+
+    while(j < matchList.length) {
+        results.innerHTML += '<li class="result">' + matchList[j] + '</li>';
+        j++;
+    }
+
+    //show results
+    toggleResults("show");
+}
+
+
 
 
 
