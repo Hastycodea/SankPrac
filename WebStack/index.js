@@ -13,8 +13,29 @@
 
 
 var firstItem = document.getElementById("img1"),
-card = document.getElementsByClassName("card");
+    card = document.getElementsByClassName("card"),
+    paragraphs = document.getElementsByTagName("p"),
+    items = document.getElementsByClassName("items");
 
-console.log(card);
-console.log(firstItem);
+
+items[1].style.display="none";
+
+for(var i = 0; i < paragraphs.length; i++) {
+    paragraphs[i].style.color="grey";
+}
+
+
+var submitBtn = document.getElementById("submit");
+var container = document.querySelector(".container");
+
+submitBtn.addEventListener("click", function() {
+    console.log('I\'ve been clicked!');
+})
+
+container.addEventListener("mouseenter", mouseEnterContainer);
+
+function mouseEnterContainer() {
+    console.log("Mouse Enter Clicked");
+}
+
 
