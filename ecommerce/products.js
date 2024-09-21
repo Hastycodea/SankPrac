@@ -1,91 +1,58 @@
-  // Array holding product data
-  const products = [
-    {
-      title: "Product 1",
-      description: "Some quick example text to build on the card title.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 2",
-      description: "Another example text to build on the card title.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 3",
-      description: "Third example text to build on the card title.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    {
-        title: "Product 4",
-        description: "More example text for the fourth product.",
-        image: "assets/product1.png",
-      },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    {
-        title: "Product 4",
-        description: "More example text for the fourth product.",
-        image: "assets/product1.png",
-      },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    {
-      title: "Product 4",
-      description: "More example text for the fourth product.",
-      image: "assets/product1.png",
-    },
-    
-    // Add more products as needed
-  ];
+// variables
+const productContainer = document.querySelector(".products .row");
 
-  // Function to dynamically generate product HTML
-  function renderProducts() {
-    const productsContainer = document.querySelector(".products .row");
+// getting products
+class Products {
+    async getPoducts() {
+        try {
+            let result = await fetch("products.json")
+            let data = await result.json(); //parsing the json
 
-    products.forEach(product => {
-      const productHTML = `
-        <div class="col-6 col-lg-3">
-          <div class="card">
-            <a href="detail.html"> <img src="${product.image}" class="card-img-top" alt="${product.title}"> </a>
-            <div class="card-body">
-              <h5 class="card-title">${product.title}</h5>
-              <p class="card-text">${product.description}</p>
-              <a href="#" class="btn btn-primary">Add to cart</a>
-            </div>
-          </div>
-        </div>
-      `;
+            // accessing product array inside the object
+            let products = data.products;
+            products = products.map(item => {
+                const { title, description, image } = item;
+                return {title, description, image};
+            });
+            return products;
 
-      // Append the generated HTML to the container
-      productsContainer.innerHTML += productHTML;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+
+// displaying products
+class UI {
+    displayProducts(products) {
+        let result = '';
+        products.forEach(product => {
+            result += `
+            <div class="col-6 col-lg-3 mb-3">
+                  <div class="card">
+                    <a href="detail.html"> <img src=${product.image} class="card-img-top" alt="..."> </a>
+                    <div class="card-body">
+                      <h5 class="card-title">${product.title}</h5>
+                      <p class="card-text">${product.description}</p>
+                      <a href="#" class="btn btn-primary">Add to cart</a>
+                    </div>
+                  </div>
+                </div>`;
+        });
+
+        productContainer.innerHTML = result;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const ui = new UI();
+    const products = new Products();
+
+    // getting all products
+    products.getPoducts().then(products => {
+        ui.displayProducts(products);
     });
-  }
 
-  // Call the renderProducts function when the page loads
-  window.onload = renderProducts;
+});
+
