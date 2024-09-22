@@ -1,0 +1,55 @@
+{
+    "games": [
+      {
+        "title": "The Witcher 3: Wild Hunt",
+        "genre": "Action RPG",
+        "developer": "CD Projekt Red"
+      },
+      {
+        "title": "Minecraft",
+        "genre": "Sandbox",
+        "developer": "Mojang Studios"
+      },
+      {
+        "title": "Halo: Infinite",
+        "genre": "First-person Shooter",
+        "developer": "343 Industries"
+      },
+      {
+        "title": "The Legend of Zelda: Breath of the Wild",
+        "genre": "Action-Adventure",
+        "developer": "Nintendo"
+      },
+      {
+        "title": "Dark Souls III",
+        "genre": "Action RPG",
+        "developer": "FromSoftware"
+      },
+      {
+        "title": "Fortnite",
+        "genre": "Battle Royale",
+        "developer": "Epic Games"
+      },
+      {
+        "title": "Cyberpunk 2077",
+        "genre": "Action RPG",
+        "developer": "CD Projekt Red"
+      },
+      {
+        "title": "Stardew Valley",
+        "genre": "Simulation, RPG",
+        "developer": "ConcernedApe"
+      },
+      {
+        "title": "Overwatch 2",
+        "genre": "First-person Shooter",
+        "developer": "Blizzard Entertainment"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "genre": "Action-Adventure",
+        "developer": "Rockstar Games"
+      }
+    ]
+  }
+  
