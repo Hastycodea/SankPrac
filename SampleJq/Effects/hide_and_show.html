@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hide and show effects</h1>
+    <h2 style="display: none;">This is heading two example</h2>
+
+    <button id="show" type="button">show</button>
+    <button id="hide" type="button">hide</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function() {
+                $("h1").hide();
+            });
+
+            $("#show").click(function() {
+                $("h2").show();
+            });
+        });
+    </script>
+    
+</body>
+</html>
