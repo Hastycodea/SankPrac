@@ -1,0 +1,17 @@
+.img-container {
+    position: relative; 
+    overflow: hidden;
+}
+
+.wishlist-container {
+    position:absolute;
+    top: 30%;
+    right: 5px;
+    transform: translateX(150%);
+    transition: all 0.3s linear;
+}
+
+.img-container:hover .wishlist-container{
+    transform: translateX(0);
+}
+
