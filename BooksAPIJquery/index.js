@@ -38,12 +38,9 @@ $(document).ready(function() {
                 let title = data.items[i].volumeInfo.title;
                 let description = data.items[i].volumeInfo.description;
 
-                // $('#dynamicImage').attr('src', newImageUrl);
-                // $('#title').text(title);
-                // $('#description').text(description);
-
+                
                 let bookItem = `
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-3">
                   
                   
                     <div class="card" style="width: 18rem;">
@@ -69,7 +66,6 @@ $(document).ready(function() {
                           <p class="card-text">
                             <span class="title" style="font-weight: bold;" id="title">${title}</span><br>
                             <span id="description">
-                                ${description}
                             </span>
                             </p>
                         </div>
