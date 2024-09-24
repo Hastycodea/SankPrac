@@ -1,16 +1,17 @@
 
 function validateForm() {
-    console.log("Enter name")
 
     var fullName = document.getElementById("fullName").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
+    var dob = document.getElementById("dob").value;
 
     var fullNameError = document.getElementById("fullNameError");
     var emailError = document.getElementById("emailError");
     var passwordError = document.getElementById("passwordError");
     var confirmPasswordError = document.getElementById("confirmPasswordError");
+    var dobError = document.getElementById("dobError");
 
     if(fullName.length < 3) {
         fullNameError.innerText = "Must be at least 3 characters long"
@@ -37,6 +38,16 @@ function validateForm() {
 
         return false;
     }
+
+    var dobDate = new Date(dob);
+    var today = new Date();
+    var age = today.getFullYear() - dobDate.getFullYear();
+    if(age < 18) {
+        dobError.innerText = "You must be at least 18 years old";
+        return false;
+    }
+
+    form.reset();
 
     return true;
 }
