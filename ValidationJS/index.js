@@ -2,13 +2,13 @@
 function validateForm() {
 
     var fullName = document.getElementById("fullName").value;
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("email");
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
     var dob = document.getElementById("dob").value;
 
     var fullNameError = document.getElementById("fullNameError");
-    var emailError = document.getElementById("emailError");
+    var emailFeedback = document.getElementById("emailFeedback");
     var passwordError = document.getElementById("passwordError");
     var confirmPasswordError = document.getElementById("confirmPasswordError");
     var dobError = document.getElementById("dobError");
@@ -20,11 +20,25 @@ function validateForm() {
 
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if(!emailRegex.test(email)) {
-        emailError.innerText = "Please enter a valid email address";
+    // listening for email input in real time
+    email.addEventListener("input", function() {
 
-        return false;
-    }
+        const emailValue = email.value;
+        if(emailValue === "") {
+            emailFeedback.innerText = "";
+
+        } else if(!emailRegex.test(emailValue)) {
+            emailFeedback.innerText = "Invalid email format";
+            emailFeedback.classList.remove('valid');
+            emailFeedback.classList.add('error');
+        } else {
+            emailFeedback.innerText = "valid email";
+            emailFeedback.classList.remove('error');
+            emailFeedback.classList.add('valid');
+        }
+
+    });
+
 
     var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
