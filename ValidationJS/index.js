@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (fullName.length < 3) {
             fullNameError.innerText = "Must be at least 3 characters long"
             isValid = false;
+        } else {
+            fullNameError.innerText = "";
         }
 
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (!emailRegex.test(email)) {
             emailFeedback.innerText = "Invalid email format"
             isValid = false;
-        } 
+        } else {
+            emailFeedback.innerText = "";
+        }
 
         var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
         
@@ -55,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (password !== confirmPassword) {
             confirmPasswordError.innerText = "Passwords do not match";
             isValid = false;
+        } else {
+            confirmPasswordError.innerText = "";
         }
 
         var dobDate = new Date(dob);
