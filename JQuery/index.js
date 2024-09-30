@@ -1,4 +1,20 @@
 $(document).ready(function() {
+
+    $.ajax({
+        url: 'games.json',
+        success: function(result) {
+            var games = result.games;
+            var gamesList = '';
+
+            games.forEach(function(game) {
+                gamesList += game.title + "<br>";
+            });
+
+            $("#about").html(gamesList);
+        }
+    });
+
+
     $("#about").click(function() {
         
         if($(this).html() === "you clicked me!") {
