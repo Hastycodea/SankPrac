@@ -1,10 +1,12 @@
+import passport from './assets/passport-photo.jpg';
+
 
 function Card() {
     return(
         <div className="card">
-            <img src="https://via.placeholder.com/150" alt="" />
-            <h2>Andreh Andere</h2>
-            <p>I write Java programs and SpringBoot Applications</p>
+            <img className="card-image" src={passport} alt="" />
+            <h2 className='card-title'>Kennedy Musyoks</h2>
+            <p className='card-text'>I write Java programs and SpringBoot Applications</p>
         </div>
 
     );
