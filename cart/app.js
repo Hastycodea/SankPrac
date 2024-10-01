@@ -1,10 +1,10 @@
 const products = [
-  { name: "Adidas Shoes", price: 2500, id: 1, quantity: 1, },
-  { name: "Sting Energy Drink", price: 120, id: 2, quantity: 1, },
-  { name: "Umbrella", price: 500, id: 3, quantity: 1, },
-  { name: "Cat Food", price: 900, id: 4, quantity: 1, },
-  { name: "T Shirt", price: 300, id: 5, quantity: 1, },
-  { name: "Book", price: 100, id: 6, quantity: 1, },
+  { name: "Adidas Shoes", price: 2500, id: 1,},
+  { name: "Sting Energy Drink", price: 120, id: 2,},
+  { name: "Umbrella", price: 500, id: 3,},
+  { name: "Cat Food", price: 900, id: 4,},
+  { name: "T Shirt", price: 300, id: 5,},
+  { name: "Book", price: 100, id: 6,},
 ];
 
 const productsHTML = products.map(
@@ -22,10 +22,12 @@ let cart = [];
 
 function addToCart(productId, productName, productPrice) {
   const existingProduct = cart.find(item => item.id === productId);
+  console.log(existingProduct);
 
   if (existingProduct) {
+    existingProduct.quantity += 1
   } else {
-    cart.push({ id: productId, name: productName, price: productPrice });
+    cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
 
   }
 
@@ -47,6 +49,11 @@ function updateCart() {
     cartItem.classList.add('cart-item');
     cartItem.innerHTML = `
       <div >${item.name}</div>
+      <div style='display: flex; align-items: center;';>
+        <button id='decrement'> - </button>
+        <p id='quantity'>${item.quantity}</p>
+        <button id='increment'> + </button>
+      </div>
       <div >${item.price}</div>
       `;
       cartItemsElements.appendChild(cartItem);
@@ -55,7 +62,7 @@ function updateCart() {
   const itemsTotal = cart.length;
   totalItems.innerText = itemsTotal;
 
-  const total = cart.reduce((sum, item) => item.price + sum, 0);
+  const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   totalPrice.textContent = total.toFixed(2);
   
 }
