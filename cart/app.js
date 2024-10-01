@@ -23,8 +23,10 @@ let cart = [];
 function addToCart(productId, productName, productPrice) {
   const existingProduct = cart.find(item => item.id === productId);
 
-  if (!existingProduct) {
+  if (existingProduct) {
+  } else {
     cart.push({ id: productId, name: productName, price: productPrice });
+
   }
 
   updateCart();
@@ -34,6 +36,7 @@ function addToCart(productId, productName, productPrice) {
 function updateCart() {
   const cartItemsElements = document.getElementById('cart-items');
   const totalPrice = document.querySelector('.total');
+  const totalItems = document.querySelector('.noOfItems');
 
   //clearing the current cart elements
   cartItemsElements.innerHTML = '';
@@ -49,18 +52,22 @@ function updateCart() {
       cartItemsElements.appendChild(cartItem);
   });
 
+  const itemsTotal = cart.length;
+  totalItems.innerText = itemsTotal;
 
-  //Event listners for add to cart button
-  document.querySelectorAll('.product-btn').forEach(button => {
-    button.addEventListener('click', event => {
-      const productElement = event.target.closest('.product-card');
-      const productId = parseInt(productElement.getAttribute('data-id'));
-      const productName = productElement.getAttribute('product-name');
-      const productPrice = productElement.getAttribute('product-price');
-
-      addToCart(productId, productName, productPrice);
-    });
-  });
-
-
+  const total = cart.reduce((sum, item) => item.price + sum, 0);
+  totalPrice.textContent = total.toFixed(2);
+  
 }
+
+// Attaching Event listners for add to cart button after rendering the html
+document.querySelectorAll('.product-btn').forEach(button => {
+  button.addEventListener('click', event => {
+    const productElement = event.target.closest('.product-card');
+    const productId = parseInt(productElement.getAttribute('data-id'));
+    const productName = productElement.querySelector('.product-name').innerText;
+    const productPrice = parseFloat(productElement.querySelector('.product-price').innerText.slice(1));
+
+    addToCart(productId, productName, productPrice);
+  });
+});
