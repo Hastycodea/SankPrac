@@ -2,15 +2,19 @@ import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import Food from './Food.jsx'
 import Card from './Card.jsx'
-import Button from './Button/Button.jsx'
+// import Button from './Button/Button.jsx'
 import Student from './Students.jsx'
 import UserGreeting from './UserGreeting.jsx'
 import List from './List.jsx'
+import Button from './Button.jsx'
+// import ProfilePic from './ProfilePic.jsx'
+import MyComponent from './MyComponent.jsx'
+import Counter from './Counter.jsx'
 
 function App() {
 
   const students = [
-    { name: 'Ken', age: 45 },
+    { name: 'Ken', age: 8 },
     { id: 1, name: 78, age: 5 },
     { id: 2, name: 'Kent', age: 56 },
     { id: 3, name: 'Lynn', age: 4 },
@@ -18,11 +22,11 @@ function App() {
   ];
 
   const techers = [
-    { name: 'Ken', age: 45 },
-    { id: 1, name: 'Kim', age: 5 },
-    { id: 2, name: 'Kent', age: 56 },
-    { id: 3, name: 'Lynn', age: 4 },
-    { id: 4, name: 'Boss', age: 48 }
+    { id: 5, name: 'Ken', age: 45 },
+    { id: 6, name: 'Kim', age: 5 },
+    { id: 7, name: 'Kent', age: 56 },
+    { id: 8, name: 'Lynn', age: 4 },
+    { id: 9, name: 'Boss', age: 48 }
   ];
 
   return (
@@ -30,6 +34,10 @@ function App() {
       <Header />
       <Food />
       <Footer />
+      <Button />
+      <Counter />
+      <MyComponent />
+      {/* <ProfilePic /> */}
       <List items={students} category="Students" />
       <List items={students} category="Teachers" />
 
@@ -37,7 +45,6 @@ function App() {
       <UserGreeting />
       <Card />
       <Card />
-      <Button />
       <Student name="Mansa Musa" age={50} isStudent={false} />
       <Student name="Omondi Timon" />
     </>
