@@ -7,7 +7,7 @@ let totalPrice = 0;
 // Function to add a product to the cart
 function addToCart(productId, productName, productPrice) {
     // Check if the product is already in the cart
-    const existingProduct = cart.find(item => item.id === productId);
+    const existingProduct = cart.find(item => item.id ===  productId);
 
     if (existingProduct) {
         // Increment the quantity if the product is already in the cart

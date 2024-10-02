@@ -11,7 +11,7 @@ function App() {
 
   const students = [
     { name: 'Ken', age: 45 },
-    { id: 1, name: 'Kim', age: 5 },
+    { id: 1, name: 78, age: 5 },
     { id: 2, name: 'Kent', age: 56 },
     { id: 3, name: 'Lynn', age: 4 },
     { id: 4, name: 'Boss', age: 48 }
