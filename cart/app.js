@@ -35,6 +35,33 @@ function addToCart(productId, productName, productPrice) {
 
 }
 
+function incrementQuantity(id) {
+  const product = cart.find(item => item.id === id);
+  if(product) {
+    product.quantity += 1;
+    updateCart();
+  }
+}
+
+function remove(id) {
+  cart = cart.filter(item => item.id !== id);
+  updateCart();
+}
+
+function decrementQuantity(id) {
+  const product = cart.find(item => item.id === id);
+
+  if(product) {
+    if(product.quantity === 1) {
+      remove(id);
+    } else {
+      product.quantity -= 1;
+      updateCart();
+    }
+  }
+
+}
+
 function updateCart() {
   const cartItemsElements = document.getElementById('cart-items');
   const totalPrice = document.querySelector('.total');
@@ -50,9 +77,9 @@ function updateCart() {
     cartItem.innerHTML = `
       <div >${item.name}</div>
       <div style='display: flex; align-items: center;';>
-        <button id='decrement'> - </button>
+        <button onclick='decrementQuantity(${item.id})'> - </button>
         <p id='quantity'>${item.quantity}</p>
-        <button id='increment'> + </button>
+        <button onclick='incrementQuantity(${item.id})'> + </button>
       </div>
       <div >${item.price}</div>
       `;
