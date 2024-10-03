@@ -16,13 +16,13 @@ function MyComponent() {
     }
 
     const decrementAge = () => {
-        if(age > 0) {
+        if (age > 0) {
             setAge(age - 1);
         }
     }
 
     const toggleStatus = () => {
-        setIsEmployed(!isEmployed); 
+        setIsEmployed(!isEmployed);
     }
 
     return (
@@ -32,7 +32,7 @@ function MyComponent() {
 
             <p>Age: {age}</p>
             <button onClick={incrementAge}>Increment Age</button>
-            
+
             <button onClick={decrementAge}>Decrement Age</button>
 
             <p>Is Employed: {isEmployed ? 'yes' : 'no'}</p>
