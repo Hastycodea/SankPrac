@@ -1,5 +1,6 @@
 import ColorPicker from "./ColorPicker";
 import Counter from "./Counter";
+import Car from "./Car";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
     <ColorPicker />
     <Counter />
+    <Car />
     </>
   );
 
