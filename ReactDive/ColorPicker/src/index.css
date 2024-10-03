@@ -38,3 +38,13 @@ input[type='color'] {
     border: .3em solid hsl(0, 0%, 80%);
     padding: 2px;
 }
+
+.counter p{
+    font-size: 1.8rem;
+}
+
+.counter button {
+    height: 50px;
+    width: 75px;
+    margin: 5px;
+}
