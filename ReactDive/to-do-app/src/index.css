@@ -1,0 +1,55 @@
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.task-input input {
+  height: 25px;
+  width: 150px;
+  border-radius: 5px;
+  margin-right: .3rem;
+
+}
+
+.task-input button{
+  background-color: lightgreen;
+  color: white;
+  height: 25px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.task-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: grey;
+  width: 350px;
+  margin-top: .5rem;
+  border-radius: 10px;
+}
+
+.task-items button {
+  margin: 3px;
+  height: 25px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+
+.task-items .delete {
+  background-color: red;
+}
+
+.task-items .position {
+  background-color: lightblue;
+}
