@@ -28,7 +28,7 @@ function ToDo() {
                 <p>{task}</p>
 
                 <div>
-                    <button className='delete'>Delete</button>
+                    <button className='delete' key={index} onClick={() => handleDeleteTask(index)}>Delete</button>
                     <button className='position'>up</button>
                     <button className='position'>down</button>
                 </div>
