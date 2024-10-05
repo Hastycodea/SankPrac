@@ -7,7 +7,9 @@ function ToDo() {
     function handleAddTask() {
         const newTask = document.getElementById('new-task').value;
 
-        setTasks(t => [...t, newTask]);
+        if(newTask.trim() !== "") {
+            setTasks(t => [...t, newTask]);
+        }
 
         document.getElementById('new-task').value = '';
     }
