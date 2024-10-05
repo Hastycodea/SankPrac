@@ -6,6 +6,7 @@ import UpdateArray from "./UpdateArray";
 import MyComponent from "./MyComponent";
 import Dimensions from "./Dimensions";
 import DigitalClock from "./DigitalClock";
+import ComponentA from "./ComponentA";
 
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
     <Counter />
     <Car />
     <MyComponent />
-    <Dimensions /> */}
-    <DigitalClock />
+    <Dimensions />
+    <DigitalClock /> */}
+
+    <ComponentA /> 
     
     </>
   );
