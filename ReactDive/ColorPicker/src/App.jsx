@@ -3,17 +3,22 @@ import Counter from "./Counter";
 import Car from "./Car";
 import Food from "./Food";
 import UpdateArray from "./UpdateArray";
+import MyComponent from "./MyComponent";
+import Dimensions from "./Dimensions";
 
 
 function App() {
 
   return(
     <>
-    <ColorPicker />
+    {/* <ColorPicker />
     <UpdateArray />
     <Food />
-    <Counter />
+    <Counter /> */}
     <Car />
+    <MyComponent />
+    <Dimensions />
+    
     </>
   );
 
