@@ -18,6 +18,22 @@ function ToDo() {
         setTasks(tasks.filter((_, i) => i !== id ));
     }
 
+    function moveUpTask(id) {
+        if(id > 0) {
+            const updatedTasks = [...tasks];
+            [updatedTasks[id], updatedTasks[id - 1]] = [updatedTasks[id - 1], [updatedTasks[id]]];
+            setTasks(updatedTasks);
+        }
+    }
+
+    function moveDownTask(id) {
+        if(id < tasks.length - 1) {
+            const updatedTasks = [...tasks];
+            [updatedTasks[id], updatedTasks[id + 1]] = [updatedTasks[id + 1], [updatedTasks[id]]];
+            setTasks(updatedTasks);
+        }
+    } 
+
     return (
         <div className='todo'>
             <h2 className='title'>To-Do-List</h2>
@@ -30,9 +46,9 @@ function ToDo() {
                 <p>{task}</p>
 
                 <div>
-                    <button className='delete' key={index} onClick={() => handleDeleteTask(index)}>Delete</button>
-                    <button className='position'>up</button>
-                    <button className='position'>down</button>
+                    <button className='delete' onClick={() => handleDeleteTask(index)}>Delete</button>
+                    <button className='position' onClick={() => moveUpTask(index)}>up</button>
+                    <button className='position' onClick={() => moveDownTask(index)}>down</button>
                 </div>
 
                 
