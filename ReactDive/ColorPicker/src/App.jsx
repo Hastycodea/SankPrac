@@ -5,6 +5,7 @@ import Food from "./Food";
 import UpdateArray from "./UpdateArray";
 import MyComponent from "./MyComponent";
 import Dimensions from "./Dimensions";
+import DigitalClock from "./DigitalClock";
 
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
     {/* <ColorPicker />
     <UpdateArray />
     <Food />
-    <Counter /> */}
+    <Counter />
     <Car />
     <MyComponent />
-    <Dimensions />
+    <Dimensions /> */}
+    <DigitalClock />
     
     </>
   );
