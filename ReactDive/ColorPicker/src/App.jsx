@@ -8,6 +8,7 @@ import Dimensions from "./Dimensions";
 import DigitalClock from "./DigitalClock";
 import ComponentA from "./ComponentA";
 import Ref from "./Ref";
+import StopWatch from "./StopWatch";
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
     <DigitalClock /> */}
 
     {/* <ComponentA />  */}
-    <Ref />
+    {/* <Ref /> */}
+    <StopWatch />
     
     </>
   );
