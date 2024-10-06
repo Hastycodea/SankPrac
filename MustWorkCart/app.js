@@ -58,7 +58,8 @@ class UI {
 
     addCartItem(item) {
         let result = `
-        <div class="cart-image">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="cart-image">
                 <img src=${item.image} alt="">
                 <p>${item.title}</p>
             </div>
@@ -72,13 +73,15 @@ class UI {
             <div class="cart-item-price">
                 <p>Ksh. <span id="item-amount">${item.price}</span></p>
             </div>
+
+        </div>
         `;
-        cartContent.innerHTML = result;
+        cartContent.innerHTML += result;
     }
 
     getCartButtons() {
         const buttons = [...document.querySelectorAll('.add-to-cart')];
-        
+
         buttons.forEach(button => {
             let id = button.dataset.id;
 
