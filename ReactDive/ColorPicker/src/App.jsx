@@ -7,6 +7,7 @@ import MyComponent from "./MyComponent";
 import Dimensions from "./Dimensions";
 import DigitalClock from "./DigitalClock";
 import ComponentA from "./ComponentA";
+import Ref from "./Ref";
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
     <Dimensions />
     <DigitalClock /> */}
 
-    <ComponentA /> 
+    {/* <ComponentA />  */}
+    <Ref />
     
     </>
   );
