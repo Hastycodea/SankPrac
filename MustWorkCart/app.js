@@ -1,6 +1,8 @@
 // declaring variables
 const productsDOM = document.querySelector('.products-row');
 const cartContent = document.querySelector('.cart');
+const cartTotal = document.getElementById('total-amount');
+const cartItems = document.getElementById('items-quantity');
 
 // cart
 let cart = [];
@@ -55,6 +57,19 @@ class UI {
         productsDOM.innerHTML = result;
     }
 
+    setCartValues(cart) {
+        let tempTotal = 0;
+        let itemsTotal = 0;
+
+        cart.map( item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+        });
+
+        cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+        cartItems.innerText = itemsTotal;
+    }
+
 
     addCartItem(item) {
         let result = `
@@ -65,9 +80,9 @@ class UI {
             </div>
 
             <div class="cart-quantity d-flex gap-2 align-items-center ">
-                <button class="btn btn-outline-primary" id="increment"> - </button>
-                <p id="quantity">1</p>
-                <button class="btn btn-outline-primary" id="decrement"> + </button>
+                <button class="btn btn-outline-primary increment" data-id=${item.id}> - </button>
+                <p id="quantity">${item.amount}</p>
+                <button class="btn btn-outline-primary decrement" data-id=${item.id}> + </button>
             </div>
 
             <div class="cart-item-price">
@@ -88,17 +103,33 @@ class UI {
             button.addEventListener('click', event => {
 
                 // getting product from products
-                let cartItem = { ...Storage.getProduct(id) }
+                let cartItem = { ...Storage.getProduct(id), amount:1 }
 
                 // adding product to cart
                 cart = [...cart, cartItem]
 
-                // displayign cart items
+                // saving cart in the local storage
+                Storage.saveCart(cart);
+
+                // displaying cart items
                 this.addCartItem(cartItem);
             })
         });
 
     }
+
+
+
+    // cartLogic() {
+    //     cartContent.addEventListener('click', event => {
+
+    //         if(event.target.cla)
+
+    //     });
+
+    // }
+
+
 }
 
 // local Storage
@@ -110,6 +141,14 @@ class Storage {
     static getProduct(id) {
         let products = JSON.parse(localStorage.getItem('products'));
         return products.find(product => product.id === id);
+    }
+
+    static saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    static getCart() {
+        return localStorage.getItem('cart') ? JSON.stringify(cart) : [];
     }
 }
 
