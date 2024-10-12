@@ -24,8 +24,8 @@ function App() {
     <Dimensions />
     <DigitalClock /> */}
 
-    {/* <ComponentA />  */}
-    {/* <Ref /> */}
+    <ComponentA />
+    <Ref />
     <StopWatch />
     
     </>
