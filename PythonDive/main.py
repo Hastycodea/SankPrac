@@ -51,3 +51,14 @@ print(d.imag)
 num = '23'
 num = int(num)
 print(type(num))
+
+
+# Type of Conversions:
+# int()
+# float()
+# complex()
+# bool()
+# str()
+
+students = ["KanKan", "Junior", "Ken", "Mugambi"]
+print("KanKan" in students)
